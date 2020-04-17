@@ -8,6 +8,9 @@
 #include<iostream>
 #include<climits>
 #include<sstream>
+#include<stack>
+#include<unordered_map>
+
 using namespace std;
 
 path solve_dfs(Maze& m, int rows, int cols);
@@ -107,9 +110,76 @@ int main(int argc, char** argv)
     }
 }
 
+bool pointEqual (point a, point b) {
+
+    if(a.first == b.first && a.second == b.second)
+    {
+        return true;
+    }
+    return false;
+}
+
+
+
 path solve_dfs(Maze& m, int rows, int cols)
 {
-    return list<point>();
+    // initialize a vector for directions for easier iterations
+    vector<int> directions {0,1,2,3};
+
+    point end(rows-1, cols-1);
+    point current(0,0);
+
+    list<point> returnList;
+
+    // Create visited array
+    bool ** visited = new bool*[rows];
+
+    // Visited array all set to false
+    for(int i = 0; i < rows; i++)
+    {
+        visited[i] = new bool[cols];
+        for(int j = 0; j < cols; j++)
+        {
+            visited[i][j] = false;
+        }
+    }
+
+    // Dfs stack used to track points;
+    stack<point> s;
+    visited[current.first][current.second] = true;
+    s.push(current);
+
+    while(!s.empty()){
+        bool noDirection = true;
+
+        if (pointEqual(current,end))
+        {
+            break;
+        }
+
+        for(auto i: directions){
+            if(!visited[current.first][current.second] && m.can_go(i,current.first,current.second)){
+                current = current + moveIn(i);
+                s.push(current);
+                visited[current.first][current.second] = true;
+                noDirection = false;
+                break;
+            }
+        }
+
+        if(noDirection){
+            s.pop();
+            current = s.top();
+        }
+    }
+
+    while(!s.empty())
+    {
+        returnList.push_front(s.top());
+        s.pop();
+    }
+
+    return returnList;
 }
 
 path solve_bfs(Maze& m, int rows, int cols)
