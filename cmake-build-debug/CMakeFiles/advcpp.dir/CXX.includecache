@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/LDin21/Documents/GitHub/advcpp/maze/maze.cpp
+maze.h
+C:/Users/LDin21/Documents/GitHub/advcpp/maze/maze.h
+algorithm
+-
+iostream
+-
+vector
+-
+random
+-
+list
+-
+utility
+-
+
 C:/Users/LDin21/Documents/GitHub/advcpp/maze/maze.h
 square.h
 C:/Users/LDin21/Documents/GitHub/advcpp/maze/square.h
@@ -44,6 +60,10 @@ iostream
 climits
 -
 sstream
+-
+stack
+-
+unordered_map
 -
 
 C:/Users/LDin21/Documents/GitHub/advcpp/maze/square.h
