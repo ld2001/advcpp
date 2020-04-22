@@ -289,6 +289,7 @@ path solve_dijkstra(Maze& m, int rows, int cols)
     point end = make_pair(rows-1,cols-1);
     point current = make_pair(0,0);
 
+    // Create node class and comparator for priority queue
     class Node {
     public:
         point loc;
@@ -328,22 +329,62 @@ path solve_dijkstra(Maze& m, int rows, int cols)
     // Max elements = rows * columns
     int max = rows * cols;
 
-    map <point, int> costMatrix;
+    map <point, int> costMap;
 
     for(int i = 0; i < rows; i++)
     {
         for(int j = 0; j < cols; j++)
         {
-            costMatrix[make_pair(i,j)] = max;
+            costMap[make_pair(i,j)] = max;
         }
     }
 
-    // Lambda to visit all the local cells
-    auto visitPoint = [](point a)
-    {
-        std::cout << message << "\n";
-    };
+    costMap[current] = 0;
 
+    while(!orderQueue.empty()) {
+        if (visitedSet.find(orderQueue.top().loc) != visitedSet.end()) {
+            currentNode.loc = orderQueue.top().loc;
+            currentNode.cost = orderQueue.top().cost;
+            current = currentNode.loc;
+
+            for(int i: directions)
+            {
+                point temp = current + moveIn(i);
+
+                if(m.can_go(i,current.first,current.second) && (visitedSet.find(temp) == visitedSet.end()))
+                {
+                    if (costMap[temp] > costMap[current] + m.cost(current.first,current.second,i))
+                    {
+                        costMap[temp] = costMap[current] + m.cost(current.first,current.second,i);
+                        previousPath[temp] = current;
+                    }
+                }
+            }
+
+            if(current == end) {
+                break;
+            }
+        }
+
+        orderQueue.pop();
+    }
+
+    list<point> returnList;
+
+    if(current == end) {
+
+        point begin(0,0);
+
+        while(current != begin) {
+            returnList.push_front(previousPath[current]);
+            current = previousPath[current];
+        }
+
+        return returnList;
+
+    }
+
+    return returnList;
 
     // Create a  visited set
 
