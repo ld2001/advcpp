@@ -21,6 +21,10 @@ inline point operator+(const point& l, const point& r) {
     return make_pair(l.first+r.first, l.second+r.second);
 }
 
+inline bool operator== (const point& l, const point& r) {
+    return l.first == r.first && l.second == r.second;
+}
+
 inline int opposite(const int dir)
 {
     switch(dir)
