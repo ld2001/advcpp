@@ -10,6 +10,9 @@
 #include<sstream>
 #include<stack>
 #include<unordered_map>
+#include<map>
+#include<set>
+#include<functional>
 
 using namespace std;
 
@@ -173,8 +176,6 @@ path solve_dfs(Maze& m, int rows, int cols)
         {
             proposed = current + moveIn(i);
 
-            cout <<"Can go? " << m.can_go(i,current.first,current.second) << endl;
-
             if(m.can_go(i,current.first,current.second) && !visited[proposed.first][proposed.second] ){
                 current = current + moveIn(i);
                 s.push(current);
@@ -209,11 +210,158 @@ path solve_dfs(Maze& m, int rows, int cols)
 
 path solve_bfs(Maze& m, int rows, int cols)
 {
-    return list<point>();
+    // initialize a vector for directions for easier iterations
+    vector<int> directions {0,1,2,3};
+
+    // Set your end and current points
+    point end = make_pair(rows-1,cols-1);
+    point current = make_pair(0,0);
+
+    // Initialize maps with empty array
+    map<point, list <point>> pathMap;
+    list<point> empty;
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < cols; j++)
+        {
+            pathMap[make_pair(i,j)] = empty;
+        }
+    }
+
+
+    // Initialize a queue
+    queue<point> orderQueue;
+
+    // Initialize a visited set
+    set<point> visitedSet;
+
+    // Put the current into the queue
+    // Add current to its map
+    // Add current to visited
+    orderQueue.push(current);
+    pathMap[current].push_back(current);
+    visitedSet.insert(current);
+
+    // While the queue is not empty:
+    while( !orderQueue.empty())
+    {
+        current = orderQueue.front();
+        orderQueue.pop();
+
+        if(current == end)
+        {
+            break;
+        }
+        // For each direction you can visit, if it's not visited
+        for(int i: directions)
+        {
+            // If you can visit that direction
+                // Temp = direction
+                // Add temp to queue
+                // Take currents map and add it to temp map and append temp
+                // Add temp to visited
+            point temp = current + moveIn(i);
+
+            if(m.can_go(i,current.first,current.second) && (visitedSet.find(temp) == visitedSet.end()))
+            {
+               orderQueue.push(temp);
+               visitedSet.insert(temp);
+               pathMap[temp] = pathMap[current];
+               pathMap[temp].push_back(temp);
+            }
+        }
+    }
+
+    if (current == end) {
+        return pathMap[current];
+    }
+
+    return empty;
 }
 
 path solve_dijkstra(Maze& m, int rows, int cols)
 {
+
+    // initialize a vector for directions for easier iterations
+    vector<int> directions {0,1,2,3};
+
+    // Set your end and current points
+    point end = make_pair(rows-1,cols-1);
+    point current = make_pair(0,0);
+
+    class Node {
+    public:
+        point loc;
+        int cost;
+
+        Node(point a, int b){
+            this->loc = a;
+            this->cost = b;
+        }
+    };
+
+    struct Comp {
+        bool operator()(Node &a, Node &b) {
+            return a.cost > b.cost;
+        }
+    };
+
+    // Initialize a priority queue
+    priority_queue<Node> orderQueue;
+
+    // Initialize a visited set
+    set<point> visitedSet;
+
+    // Initialize a previous map
+    map <point,point > previousPath;
+
+    previousPath[current] = current;
+
+    Node currentNode(current,0);
+
+    // Put the current into the queue
+    // Add current to visited
+    orderQueue.push(currentNode);
+    visitedSet.insert(current);
+
+
+    // Max elements = rows * columns
+    int max = rows * cols;
+
+    map <point, int> costMatrix;
+
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < cols; j++)
+        {
+            costMatrix[make_pair(i,j)] = max;
+        }
+    }
+
+    // Lambda to visit all the local cells
+    auto visitPoint = [](point a)
+    {
+        std::cout << message << "\n";
+    };
+
+
+    // Create a  visited set
+
+    // Create a map of previous point
+
+    // Create a priority queue, and set every container equal max value
+
+    // While queue is not empty and visited set size != max elements
+
+        //  If the element is not in the visited set, throw it out and continue
+        // Else:
+            // Call visit neighbor on the function
+            // Add to visited set
+
+    // Add traceback alogirthm for final
+
+
+
     return list<point>();
 }
 
