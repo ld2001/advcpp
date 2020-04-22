@@ -119,7 +119,131 @@ path solve_bfs(Maze& m, int rows, int cols)
 
 path solve_dijkstra(Maze& m, int rows, int cols)
 {
+<<<<<<< Updated upstream
     return list<point>();
+=======
+
+    // initialize a vector for directions for easier iterations
+    vector<int> directions {0,1,2,3};
+
+    // Set your end and current points
+    point end = make_pair(rows-1,cols-1);
+    point current = make_pair(0,0);
+
+    // Create node class and comparator for priority queue
+    class Node {
+    public:
+        point loc;
+        int cost;
+
+        Node(point a, int b){
+            this->loc = a;
+            this->cost = b;
+        }
+    };
+
+    struct Comp {
+        bool operator()(Node &a, Node &b) {
+            return a.cost > b.cost;
+        }
+    };
+
+    // Initialize a priority queue
+    priority_queue<Node, vector<Node>, Comp> orderQueue;
+
+    // Initialize a visited set
+    set<point> visitedSet;
+
+    // Initialize a previous map
+    map <point,point > previousPath;
+
+    previousPath[current] = current;
+
+    Node currentNode(current,0);
+
+    // Put the current into the queue
+    // Add current to visited
+    orderQueue.push(currentNode);
+
+
+    // Max elements = rows * columns
+    int max = rows * cols;
+
+    map <point, int> costMap;
+
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < cols; j++)
+        {
+            costMap[make_pair(i,j)] = max;
+        }
+    }
+
+    costMap[current] = 0;
+
+    while(!orderQueue.empty()) {
+        if (visitedSet.find(orderQueue.top().loc) == visitedSet.end()) {
+            currentNode.loc = orderQueue.top().loc;
+            currentNode.cost = orderQueue.top().cost;
+            current = currentNode.loc;
+            visitedSet.insert(current);
+
+            for(int i: directions)
+            {
+                point temp = current + moveIn(i);
+
+                if(m.can_go(i,current.first,current.second) && (visitedSet.find(temp) == visitedSet.end()))
+                {
+                    if (costMap[temp] > costMap[current] + m.cost(current.first,current.second,i))
+                    {
+                        costMap[temp] = costMap[current] + m.cost(current.first,current.second,i);
+                        previousPath[temp] = current;
+                        orderQueue.push(Node(temp, costMap[temp]));
+                    }
+                }
+            }
+
+            if(current == end) {
+                break;
+            }
+        }
+        cout << orderQueue.size() << endl;
+        orderQueue.pop();
+    }
+
+    list<point> returnList;
+
+    if(current == end) {
+
+        returnList.push_front(end);
+        
+        point begin(0,0);
+
+        while(current != begin) {
+            returnList.push_front(previousPath[current]);
+            current = previousPath[current];
+        }
+
+    }
+
+    return returnList;
+
+//     Create a  visited set
+//
+//     Create a map of previous point
+//
+//     Create a priority queue, and set every container equal max value
+//
+//     While queue is not empty and visited set size != max elements
+//
+//          If the element is not in the visited set, throw it out and continue
+//         Else:
+//             Call visit neighbor on the function
+//             Add to visited set
+//
+//     Add traceback alogirthm for final
+
+>>>>>>> Stashed changes
 }
 
 path solve_tour(Maze& m, int rows, int cols)

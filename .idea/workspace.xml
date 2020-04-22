@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="advcpp" targetName="advcpp" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fe17ebb2-5302-4d33-8f90-06ef0b53977b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\LDin21\Documents\GitHub\advcpp\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1aeViMy5gAfXtp9Ttg27PBNpvq0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="advcpp" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-dij 10 10" WORKING_DIR="file://$PROJECT_DIR$/maze" PASS_PARENT_ENVS_2="true" PROJECT_NAME="advcpp" TARGET_NAME="advcpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="advcpp" RUN_TARGET_NAME="advcpp">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fe17ebb2-5302-4d33-8f90-06ef0b53977b" name="Default Changelist" comment="" />
+      <created>1587096172256</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587096172256</updated>
+      <workItem from="1587096174704" duration="7968000" />
+      <workItem from="1587106551903" duration="3000" />
+      <workItem from="1587149648849" duration="6241000" />
+      <workItem from="1587506486118" duration="8580000" />
+      <workItem from="1587533386710" duration="4845000" />
+      <workItem from="1587583832887" duration="7710000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587592261365">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1587096699049" />
+    <state x="2064" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587518137870" />
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1587592261365" />
+    <state x="413" y="150" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587096227688">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="413" y="150" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1587096227688" />
+    <state x="421" y="98" key="FileChooserDialogImpl" timestamp="1587096337556">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="98" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1587096337556" />
+    <state width="1237" height="105" key="GridCell.Tab.0.bottom" timestamp="1587593142862">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587588514709" />
+    <state width="1237" height="105" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587593142862" />
+    <state width="1237" height="105" key="GridCell.Tab.0.center" timestamp="1587593142862">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587588514708" />
+    <state width="1237" height="105" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587593142862" />
+    <state width="1237" height="105" key="GridCell.Tab.0.left" timestamp="1587593142862">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587588514708" />
+    <state width="1237" height="105" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587593142862" />
+    <state width="1237" height="105" key="GridCell.Tab.0.right" timestamp="1587593142862">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587588514709" />
+    <state width="1237" height="105" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587593142862" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1587163009275">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587163009275" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1587163009275">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587163009275" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1587163009275">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587163009275" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1587163009275">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587163009275" />
+    <state x="2587" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1587506492646">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2587" y="347" key="com.intellij.ide.util.TipDialog/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587506492646" />
+    <state x="415" y="147" width="672" height="444" key="search.everywhere.popup" timestamp="1587538378815">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587513259451" />
+    <state x="415" y="147" width="672" height="444" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1587538378815" />
+  </component>
+</project>
