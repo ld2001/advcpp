@@ -8,6 +8,12 @@
 #include<iostream>
 #include<climits>
 #include<sstream>
+#include<stack>
+#include<unordered_map>
+#include<map>
+#include<set>
+#include<functional>
+
 using namespace std;
 
 path solve_dfs(Maze& m, int rows, int cols);
@@ -107,26 +113,174 @@ int main(int argc, char** argv)
     }
 }
 
+bool pointEqual (point a, point b) {
+
+    if(a.first == b.first && a.second == b.second)
+    {
+        return true;
+    }
+    return false;
+}
+
+
+
 path solve_dfs(Maze& m, int rows, int cols)
 {
-    return list<point>();
+    // initialize a vector for directions for easier iterations
+    vector<int> directions {0,1,2,3};
+
+    // Set your end and current points
+    point end = make_pair(rows-1,cols-1);
+    point current = make_pair(0,0);
+
+    list<point> returnList;
+
+    // Create visited array
+    bool ** visited = new bool*[rows];
+
+    // Visited array all set to false
+    for(int i = 0; i < rows; i++)
+    {
+        visited[i] = new bool[cols];
+        for(int j = 0; j < cols; j++)
+        {
+            visited[i][j] = false;
+        }
+    }
+
+    // Dfs stack used to track points;
+    stack<pair<int,int>> s;
+
+    // Visit starting and push it onto stack
+    visited[current.first][current.second] = true;
+    s.push(current);
+
+
+    // Our goal is to iteratively visit all possible paths from our current position (DFS). We do this with a stack that keeps track of all our paths and a visited array that tracks where we have visited
+    // Everytime we visit a point we push that point onto the stack, move current to that point, and check all the neighbors to see if they are non-visited points. We visit the non visited points (if any).
+    // If we run out of non visited points and we aren't at the end point, then we pop the stack, we set the current to the top, and carry on again. If our current is ever pointing to the end, we stop and output path.
+    bool noDirection;
+    point proposed;
+
+    while(!s.empty()){
+        cout << s.size() << endl;
+        noDirection = true;
+
+        // if current is equal to the end
+        if (pointEqual(current,end))
+        {
+            break;
+        }
+
+        for(int i: directions)
+        {
+            proposed = current + moveIn(i);
+
+            if(m.can_go(i,current.first,current.second) && !visited[proposed.first][proposed.second] ){
+                current = current + moveIn(i);
+                s.push(current);
+                visited[current.first][current.second] = true;
+                noDirection = false;
+                break;
+            }
+        }
+
+
+
+        // No further directions move back
+        if(noDirection && !s.empty()){
+            s.pop();
+            if(!s.empty())
+            {
+                current = s.top();
+            }
+        }
+    }
+
+    while(!s.empty())
+    {
+        returnList.push_front(s.top());
+        s.pop();
+    }
+
+    cout << "list" << endl;
+
+    return returnList;
 }
 
 path solve_bfs(Maze& m, int rows, int cols)
 {
-    return list<point>();
+    // initialize a vector for directions for easier iterations
+    vector<int> directions {0,1,2,3};
+
+    // Set your end and current points
+    point end = make_pair(rows-1,cols-1);
+    point current = make_pair(0,0);
+
+    // Initialize maps with empty array
+    map<point, list <point>> pathMap;
+    list<point> empty;
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < cols; j++)
+        {
+            pathMap[make_pair(i,j)] = empty;
+        }
+    }
+
+
+    // Initialize a queue
+    queue<point> orderQueue;
+
+    // Initialize a visited set
+    set<point> visitedSet;
+
+    // Put the current into the queue
+    // Add current to its map
+    // Add current to visited
+    orderQueue.push(current);
+    pathMap[current].push_back(current);
+    visitedSet.insert(current);
+
+    // While the queue is not empty:
+    while( !orderQueue.empty())
+    {
+        current = orderQueue.front();
+        orderQueue.pop();
+
+        if(current == end)
+        {
+            break;
+        }
+        // For each direction you can visit, if it's not visited
+        for(int i: directions)
+        {
+            // If you can visit that direction
+                // Temp = direction
+                // Add temp to queue
+                // Take currents map and add it to temp map and append temp
+                // Add temp to visited
+            point temp = current + moveIn(i);
+
+            if(m.can_go(i,current.first,current.second) && (visitedSet.find(temp) == visitedSet.end()))
+            {
+               orderQueue.push(temp);
+               visitedSet.insert(temp);
+               pathMap[temp] = pathMap[current];
+               pathMap[temp].push_back(temp);
+            }
+        }
+    }
+
+    if (current == end) {
+        return pathMap[current];
+    }
+
+    return empty;
 }
 
 path solve_dijkstra(Maze& m, int rows, int cols)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    return list<point>();
-=======
-=======
->>>>>>> c75eeb806a9b550f506bad3610343859f25d6ba5
 
     // initialize a vector for directions for easier iterations
     vector<int> directions {0,1,2,3};
@@ -220,10 +374,6 @@ path solve_dijkstra(Maze& m, int rows, int cols)
 
     if(current == end) {
 
-
-        returnList.push_front(end);
-        
-
         point begin(0,0);
 
         while(current != begin) {
@@ -250,16 +400,6 @@ path solve_dijkstra(Maze& m, int rows, int cols)
 //
 //     Add traceback alogirthm for final
 
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> c75eeb806a9b550f506bad3610343859f25d6ba5
-=======
-    return list<point>();
->>>>>>> parent of c75eeb8... Merge pull request #1 from ld2001/DSF
-=======
-    return list<point>();
->>>>>>> parent of c75eeb8... Merge pull request #1 from ld2001/DSF
 }
 
 path solve_tour(Maze& m, int rows, int cols)

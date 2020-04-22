@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated>
-      <config projectName="advcpp" targetName="advcpp" />
-    </generated>
+    <generated />
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -20,7 +18,6 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -40,9 +37,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/maze" />
   </component>
   <component name="RunManager">
-    <configuration name="advcpp" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-dij 10 10" WORKING_DIR="file://$PROJECT_DIR$/maze" PASS_PARENT_ENVS_2="true" PROJECT_NAME="advcpp" TARGET_NAME="advcpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="advcpp" RUN_TARGET_NAME="advcpp">
+    <configuration name="advcpp" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-dij 10 10" WORKING_DIR="file://$PROJECT_DIR$/maze" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="advcpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="advcpp">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -81,30 +79,31 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="413" y="150" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1587096227688" />
-    <state x="421" y="98" key="FileChooserDialogImpl" timestamp="1587096337556">
+    <state x="421" y="98" key="FileChooserDialogImpl" timestamp="1587594428395">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="98" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1587096337556" />
-    <state width="1237" height="105" key="GridCell.Tab.0.bottom" timestamp="1587593142862">
+    <state x="421" y="98" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1587594428395" />
+    <state width="1237" height="105" key="GridCell.Tab.0.bottom" timestamp="1587594318043">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587588514709" />
-    <state width="1237" height="105" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587593142862" />
-    <state width="1237" height="105" key="GridCell.Tab.0.center" timestamp="1587593142862">
+    <state width="1237" height="105" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587594318043" />
+    <state width="1237" height="105" key="GridCell.Tab.0.center" timestamp="1587594318043">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587588514708" />
-    <state width="1237" height="105" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587593142862" />
-    <state width="1237" height="105" key="GridCell.Tab.0.left" timestamp="1587593142862">
+    <state width="1237" height="105" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587594318043" />
+    <state width="1237" height="105" key="GridCell.Tab.0.left" timestamp="1587594318043">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587588514708" />
-    <state width="1237" height="105" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587593142862" />
-    <state width="1237" height="105" key="GridCell.Tab.0.right" timestamp="1587593142862">
+    <state width="1237" height="105" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587594318043" />
+    <state width="1237" height="105" key="GridCell.Tab.0.right" timestamp="1587594318043">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587588514709" />
-    <state width="1237" height="105" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587593142862" />
+    <state width="1237" height="105" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587594318043" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1587163009275">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
