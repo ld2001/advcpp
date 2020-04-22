@@ -121,6 +121,7 @@ path solve_dijkstra(Maze& m, int rows, int cols)
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     return list<point>();
 =======
@@ -253,6 +254,9 @@ path solve_dijkstra(Maze& m, int rows, int cols)
 >>>>>>> Stashed changes
 =======
 >>>>>>> c75eeb806a9b550f506bad3610343859f25d6ba5
+=======
+    return list<point>();
+>>>>>>> parent of c75eeb8... Merge pull request #1 from ld2001/DSF
 =======
     return list<point>();
 >>>>>>> parent of c75eeb8... Merge pull request #1 from ld2001/DSF
