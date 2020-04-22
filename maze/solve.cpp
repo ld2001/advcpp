@@ -308,7 +308,7 @@ path solve_dijkstra(Maze& m, int rows, int cols)
     };
 
     // Initialize a priority queue
-    priority_queue<Node> orderQueue;
+    priority_queue<Node, vector<Node>, Comp> orderQueue;
 
     // Initialize a visited set
     set<point> visitedSet;
@@ -323,7 +323,6 @@ path solve_dijkstra(Maze& m, int rows, int cols)
     // Put the current into the queue
     // Add current to visited
     orderQueue.push(currentNode);
-    visitedSet.insert(current);
 
 
     // Max elements = rows * columns
@@ -342,10 +341,11 @@ path solve_dijkstra(Maze& m, int rows, int cols)
     costMap[current] = 0;
 
     while(!orderQueue.empty()) {
-        if (visitedSet.find(orderQueue.top().loc) != visitedSet.end()) {
+        if (visitedSet.find(orderQueue.top().loc) == visitedSet.end()) {
             currentNode.loc = orderQueue.top().loc;
             currentNode.cost = orderQueue.top().cost;
             current = currentNode.loc;
+            visitedSet.insert(current);
 
             for(int i: directions)
             {
@@ -357,6 +357,7 @@ path solve_dijkstra(Maze& m, int rows, int cols)
                     {
                         costMap[temp] = costMap[current] + m.cost(current.first,current.second,i);
                         previousPath[temp] = current;
+                        orderQueue.push(Node(temp, costMap[temp]));
                     }
                 }
             }
@@ -365,7 +366,7 @@ path solve_dijkstra(Maze& m, int rows, int cols)
                 break;
             }
         }
-
+        cout << orderQueue.size() << endl;
         orderQueue.pop();
     }
 
@@ -380,30 +381,25 @@ path solve_dijkstra(Maze& m, int rows, int cols)
             current = previousPath[current];
         }
 
-        return returnList;
-
     }
 
     return returnList;
 
-    // Create a  visited set
+//     Create a  visited set
+//
+//     Create a map of previous point
+//
+//     Create a priority queue, and set every container equal max value
+//
+//     While queue is not empty and visited set size != max elements
+//
+//          If the element is not in the visited set, throw it out and continue
+//         Else:
+//             Call visit neighbor on the function
+//             Add to visited set
+//
+//     Add traceback alogirthm for final
 
-    // Create a map of previous point
-
-    // Create a priority queue, and set every container equal max value
-
-    // While queue is not empty and visited set size != max elements
-
-        //  If the element is not in the visited set, throw it out and continue
-        // Else:
-            // Call visit neighbor on the function
-            // Add to visited set
-
-    // Add traceback alogirthm for final
-
-
-
-    return list<point>();
 }
 
 path solve_tour(Maze& m, int rows, int cols)
